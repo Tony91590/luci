@@ -7,13 +7,11 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI for CPU Freq Setting
-LUCI_DEPENDS:=@arm
-LUCI_PKGARCH:=all
-
+LUCI_DEPENDS:=@(arm||aarch64)
 PKG_NAME:=luci-app-cpufreq
 PKG_VERSION:=1
-PKG_RELEASE:=6
+PKG_RELEASE:=$(COMMITCOUNT)
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
