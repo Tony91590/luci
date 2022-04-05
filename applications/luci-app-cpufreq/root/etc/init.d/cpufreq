@@ -10,7 +10,15 @@ config_get_cpufreq()
 
 start()
 {
-	config_load "$NAME"
+	local min=$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies | awk -F ' ' '{print $1 }')
+	local max=$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies | awk -F ' ' '{print $NF }')
+	
+	config_load cpufreq
+	local governor=$(uci_get_by_type settings governor schedutil)
+	local minifreq=$(uci_get_by_type settings minifreq $min)
+	local maxfreq=$(uci_get_by_type settings maxfreq $max)
+	local upthreshold=$(uci_get_by_type settings upthreshold 50)
+	local factor=$(uci_get_by_type settings factor 10)
 
 	for i in $(find /sys/devices/system/cpu/cpufreq/policy* -maxdepth 0 | grep -Eo '[0-9]+')
 	do
