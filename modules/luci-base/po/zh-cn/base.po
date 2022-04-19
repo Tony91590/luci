@@ -128,6 +128,9 @@ msgstr "<abbr title=\"Media Access Control\">MAC</abbr> 地址"
 msgid "<abbr title=\"The DHCP Unique Identifier\">DUID</abbr>"
 msgstr ""
 
+msgid "Control"
+msgstr "管控"
+
 msgid ""
 "<abbr title=\"maximal\">Max.</abbr> <abbr title=\"Dynamic Host Configuration "
 "Protocol\">DHCP</abbr> leases"
