@@ -131,6 +131,9 @@ msgstr ""
 msgid "Control"
 msgstr "管控"
 
+msgid "Target Platform"
+msgstr "设备平台"
+
 msgid ""
 "<abbr title=\"maximal\">Max.</abbr> <abbr title=\"Dynamic Host Configuration "
 "Protocol\">DHCP</abbr> leases"

@@ -325,13 +325,8 @@ check_status(){
 			echo -n "Flow Offloading"
 			exit 0
 		elif lsmod | grep -q "ecm"; then
-			if lsmod | grep -q "shortcut_fe_drv"; then
-				echo -n "QCA-NSS-ECM-SFE"
+			echo -n "QCA-NSS-ECM-SFE"
 				exit 0
-			else
-				echo -n "QCA-NSS-ECM"
-				exit 0
-			fi
 		elif lsmod | grep -q "shortcut_fe_cm"; then
 			echo -n "Shortcut-FE"
 			exit 0
