@@ -17,7 +17,7 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_DNSPROXY \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_OFFLOADING 
 	
-LUCI_TITLE:=LuCI support for Flow Offload / Shortcut-FE
+LUCI_TITLE:=LuCI support for Flow Offload
 LUCI_DEPENDS:=+PACKAGE_$(PKG_NAME)_INCLUDE_PDNSD:pdnsd-alt \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_BBR_CCA:kmod-tcp-bbr \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_DNSFORWARDER:dnsforwarder \
@@ -28,7 +28,7 @@ LUCI_PKGARCH:=all
 define Package/$(PKG_NAME)/config
 config PACKAGE_$(PKG_NAME)_INCLUDE_OFFLOADING
 	bool "Include Flow Offload"
-	default y if (TARGET_mediatek||TARGET_ramips)
+	default y if (TARGET_ipq806x||TARGET_ipq807x)
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_BBR_CCA
 	bool "Include BBR CCA"
